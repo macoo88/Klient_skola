@@ -200,9 +200,9 @@ int Call_Upload(Net* net, const char* filepath, const char* description) {
     net->header[net->n] = '\0';
     printf("Hlavička servera: %s\n", net->header);
 
-    if (strncmp(net->header, "200 STORED", 10) == 0) {
+    if (!strncmp(net->header, "200 STORED", 10)) {
         printf("Success: %s\n", net->header);
-    } else if (strncmp(net->header, "409 HASH_EXISTS", 15) == 0) {
+    } else if (!strncmp(net->header, "409 HASH_EXISTS", 15)) {
         printf("File already on server: %s\n", net->header);
     } else {
         printf("Server Error: %s\n", net->header);
