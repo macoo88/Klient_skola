@@ -2,7 +2,7 @@ Implementacia klientskej applikacie pre server podla zadania.
 
 Usage:
 
-./main -h / help    --> shows a little help
+./main -h / help    --> shows a little help\n
 ./main LIST          --> List all files on server
 ./main GET <hash>   --> this returns file that corresponds to the hash
 ./main GET <hash> -d  --> same as GET but also saves the file
