@@ -22,9 +22,9 @@ int manage_input(int argc, char* args[])
 
     if(!strcmp(args[1], "help") || !strcmp(args[1], "-h"))
     { 
-        printf("HELP is here dont worry :D");
-        printf("GET hash -d  --> to get file -d to download optional\nLIST       --> to get all files on server\nUPLOAD path/to/file  --> to upload file to server\nDELETE hash --> to delete file with selected has");
-        return -1; // end
+        printf("HELP is here dont worry :D\n");
+        printf("GET hash -d  --> to get file -d(is optional) to download optional\nLIST       --> to get all files on server\nUPLOAD path/to/file  --> to upload file to server\nDELETE hash --> to delete file with selected has\n");
+        return 0; // end
     }
     else if(!strcmp(args[1], "GET") && argc > 1)
     {
@@ -243,6 +243,7 @@ int main(int argc, char* argv[]) {
         printf("An error occured... type help to get help -> ./program_name help \n");
         return 0; 
     } // end
+    else if(input_cmd == 0){ return 0; }
 
     Net net;
     if(connect_to_server(&net)){ return 0; }
