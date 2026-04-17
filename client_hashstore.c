@@ -18,8 +18,8 @@ typedef struct{
 
 int manage_input(int argc, char* args[])
 {
-    if(argc == 0){ return -1; }
-    
+    if(argc == 1){ return -1; }
+
     if(!strcmp(args[1], "help") || !strcmp(args[1], "-h"))
     { 
         printf("HELP is here dont worry :D");
@@ -42,6 +42,9 @@ int manage_input(int argc, char* args[])
     else if(!strcmp(args[1], "DELETE") && argc > 1)
     {
         return 4; // 4 = DELETE
+    }
+    else{
+        return -1;
     }
     return -1;
 }
@@ -236,7 +239,10 @@ int main(int argc, char* argv[]) {
 
     int input_cmd = manage_input(argc, argv);
     int error;
-    if(input_cmd == -1) { return 0; } // end
+    if(input_cmd == -1) { 
+        printf("An error occured... type help to get help -> ./program_name help \n");
+        return 0; 
+    } // end
 
     Net net;
     if(connect_to_server(&net)){ return 0; }
@@ -252,7 +258,7 @@ int main(int argc, char* argv[]) {
 
     else if(input_cmd == 5){ error = Call_Get(&net, argv[2], 1); }
 
-    if(error){ printf("An error occured... \n"); }
+    if(error){ printf("An error occured... type help to get help -> ./program_name help \n"); }
 
     close(net.sock);
     printf("Spojenie ukončené\n");
