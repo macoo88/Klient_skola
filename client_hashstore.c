@@ -22,8 +22,8 @@ int manage_input(int argc, char* args[])
 
     if(!strcmp(args[1], "help") || !strcmp(args[1], "-h"))
     { 
-        printf("HELP is here dont worry :D\n");
-        printf("GET hash -d  --> to get file -d(is optional) to download optional\nLIST       --> to get all files on server\nUPLOAD path/to/file  --> to upload file to server\nDELETE hash --> to delete file with selected has\n");
+        printf("HELP is here dont worry :D\n----------------------------\n");
+        printf("GET hash -d  --> to get file -d(is optional) to download optional\nLIST       --> to get all files on server\nUPLOAD path/to/file  --> to upload file to server\nDELETE hash --> to delete file with selected has\nuse these commands like this : ./main COMMAND so example -> ./main LIST\n----------------------------");
         return 0; // end
     }
     else if(!strcmp(args[1], "GET") && argc > 1)
