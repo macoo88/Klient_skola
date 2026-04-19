@@ -28,7 +28,7 @@ int manage_input(int argc, char* args[])
     }
     else if(!strcmp(args[1], "GET") && argc > 1)
     {
-        if(argc > 2 && !strcmp(args[3], "-d")){ return 5; } //5 = GET + download
+        if(argc > 3 && !strcmp(args[3], "-d")){ return 5; } //5 = GET + download
         return 1;// 1 = GET
     }
     else if(!strcmp(args[1], "LIST"))
